@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">News Hunt</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="skip">Skip</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="new_user">New User?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="news_that_matters_to_you">News that matters to you</string>
+    <string name="newshunt">NEWSHUNT</string>
+    <string name="signup_with_email">Signup with Email</string>
+    <string name="signup_with_facebook">Signup with Facebook</string>
+    <string name="signup_with_google">Signup with Google</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="name">Name</string>
+    <string name="mobile">Mobile</string>
+    <string name="passowrd">Passowrd</string>
+    <string name="confirm_password">Confirm Password</string>
+</resources>
