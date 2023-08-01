@@ -3,11 +3,9 @@ package com.example.newshunt.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.newshunt.R
 import com.example.newshunt.AllNewsItem
+import com.example.newshunt.R
 
 class AllNewsAdapter(private val newsList: List<AllNewsItem>) :
     RecyclerView.Adapter<AllNewsAdapter.ViewHolder>() {
