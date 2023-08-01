@@ -13,13 +13,13 @@ class SkipActivity : AppCompatActivity() {
         binding = ActivitySkipBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnSignup.setOnClickListener {
+        binding.btnSignin.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnSkip.setOnClickListener {
-            val intent = Intent(this, SignInActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
