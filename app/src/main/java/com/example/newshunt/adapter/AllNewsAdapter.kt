@@ -20,7 +20,6 @@ class AllNewsAdapter(private val newsList: List<AllNewsItem>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentItem = newsList[position]
 
     }
 

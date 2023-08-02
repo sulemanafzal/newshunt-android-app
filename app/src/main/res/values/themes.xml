@@ -14,10 +14,10 @@
         <!-- Customize your theme here. -->
     </style>
 
- <!--   <style name="CustomEditTextStyle" parent="Widget.AppCompat.EditText">
-        &lt;!&ndash; Add any other attributes you want to customize here &ndash;&gt;
-        <item name="android:background">@color/black</item>
-    </style>-->
+    <!--   <style name="CustomEditTextStyle" parent="Widget.AppCompat.EditText">
+           &lt;!&ndash; Add any other attributes you want to customize here &ndash;&gt;
+           <item name="android:background">@color/black</item>
+       </style>-->
 
     <style name="TabLayout" parent="Widget.MaterialComponents.TabLayout">
         <item name="tabBackground">@color/white</item>
@@ -26,4 +26,27 @@
     <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="BottomNavigationTextStyle">
+        <item name="android:fontFamily">@font/poppin_bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxStrokeColor">@color/black</item>
+    </style>
+
+
+    <!-- Define a custom style for the helper text -->
+    <style name="CustomHelperText" parent="TextAppearance.MaterialComponents.Caption">
+        <!-- Add the following item to change the text color -->
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/_10ssp</item> <!-- Set your desired text size here -->
+        <!-- Other text attributes if needed -->
+    </style>
+
 </resources>

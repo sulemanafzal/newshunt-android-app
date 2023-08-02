@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".SignInActivity">
+    tools:context=".activity.SignInActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -83,43 +83,49 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-            <EditText
-                android:id="@+id/emailEditText"
-                android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_email"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:drawableStart="@drawable/user_icon"
-                android:drawablePadding="8dp"
-                android:hint="@string/email"
+                android:layout_marginStart="@dimen/_22sdp"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:inputType="textEmailAddress"
-                android:paddingStart="8dp"
-                android:paddingTop="8dp"
-                android:paddingEnd="8dp"
-                android:paddingBottom="8dp"
+                android:layout_marginEnd="@dimen/_22sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <EditText
-                android:id="@+id/passwordEditText"
-                android:layout_width="0dp"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/ebrima_regular"
+                    android:hint="@string/email"
+                    android:textColorHint="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_password"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="24dp"
-                android:drawableStart="@drawable/password_icon"
-                android:drawablePadding="8dp"
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                android:paddingStart="8dp"
-                android:paddingTop="8dp"
-                android:paddingEnd="8dp"
-                android:paddingBottom="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/emailEditText" />
+                android:layout_marginStart="@dimen/_22sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_22sdp"
+                app:layout_constraintEnd_toEndOf="@+id/layout_email"
+                app:layout_constraintStart_toStartOf="@+id/layout_email"
+                app:layout_constraintTop_toBottomOf="@+id/layout_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/ebrima_regular"
+                    android:hint="@string/passowrd"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Forgot Password TextView -->
             <TextView
@@ -130,8 +136,8 @@
                 android:clickable="true"
                 android:text="@string/forgot_password"
                 android:textColor="@android:color/black"
-                app:layout_constraintEnd_toEndOf="@id/passwordEditText"
-                app:layout_constraintTop_toBottomOf="@id/passwordEditText"
+                app:layout_constraintEnd_toEndOf="@id/layout_password"
+                app:layout_constraintTop_toBottomOf="@id/layout_password"
                 app:layout_constraintVertical_chainStyle="packed" />
 
 

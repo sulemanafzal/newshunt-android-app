@@ -13,28 +13,42 @@
         android:theme="@style/Theme.NewsHunt"
         tools:targetApi="31">
         <activity
-            android:name=".SignInWithEmailActivity"
+            android:name=".activity.PasswordResetActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignupWithSocialAccountsActivity"
+            android:name=".activity.ForgotPasswordActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".activity.SignInWithEmailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SkipActivity"
+            android:name=".activity.SignupWithSocialAccountsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.SignInActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.SkipActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,7 +61,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

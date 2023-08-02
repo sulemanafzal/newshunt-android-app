@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/newsFragment"
+        android:icon="@drawable/news_icon"
+        android:title="News"
+        app:iconGravity="start"/>
+
+    <item
+        android:id="@+id/opinionFragment"
+        android:icon="@drawable/message_icon"
+        android:title="Opinion"
+        app:iconGravity="start"/>
+
+    <item
+        android:id="@+id/threndingFragment"
+        android:icon="@drawable/fire_logo"
+        android:title="Thrending"
+        app:iconGravity="start"/>
+
+    <item
+        android:id="@+id/archFragment"
+        android:icon="@drawable/arch_logo"
+        android:title="Arch"
+        app:iconGravity="start"/>
+
+
+</menu>

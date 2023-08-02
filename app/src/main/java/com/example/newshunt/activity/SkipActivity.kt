@@ -1,9 +1,8 @@
-package com.example.newshunt
+package com.example.newshunt.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.newshunt.databinding.ActivityMainBinding
 import com.example.newshunt.databinding.ActivitySkipBinding
 
 class SkipActivity : AppCompatActivity() {
