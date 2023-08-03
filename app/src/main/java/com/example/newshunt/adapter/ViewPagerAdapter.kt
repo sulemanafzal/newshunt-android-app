@@ -1,4 +1,4 @@
-package com.example.newshunt
+package com.example.newshunt.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

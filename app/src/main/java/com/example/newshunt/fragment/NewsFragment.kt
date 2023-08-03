@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.newshunt.ViewPagerAdapter
+import com.example.newshunt.adapter.ViewPagerAdapter
 import com.example.newshunt.databinding.FragmentNewsBinding
 
 class NewsFragment : Fragment() {

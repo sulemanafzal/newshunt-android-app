@@ -126,4 +126,9 @@
     <string name="str_confirm_new_password">Confirm New Password</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="str_userName">Sana Khan</string>
+    <string name="str_profile">Profile</string>
+    <string name="str_edit">Edit</string>
+    <string name="str_useremail">Sanakhan21@email.com</string>
+    <string name="user_pasword">123123</string>
 </resources>
