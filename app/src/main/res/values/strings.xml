@@ -131,4 +131,6 @@
     <string name="str_edit">Edit</string>
     <string name="str_useremail">Sanakhan21@email.com</string>
     <string name="user_pasword">123123</string>
+    <string name="str_mobilenumber">+92 3478923211</string>
+    <string name="str_save">Save</string>
 </resources>

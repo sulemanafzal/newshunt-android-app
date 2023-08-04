@@ -10,9 +10,15 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:statusBarColor">@color/gray</item>
         <!-- Customize your theme here. -->
     </style>
+
+  <!--  <style name="Theme.NoActionbar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>-->
 
     <!--   <style name="CustomEditTextStyle" parent="Widget.AppCompat.EditText">
            &lt;!&ndash; Add any other attributes you want to customize here &ndash;&gt;
@@ -47,6 +53,10 @@
     <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">@dimen/_10ssp</item> <!-- Set your desired text size here -->
         <!-- Other text attributes if needed -->
+    </style>
+
+    <style name="CustomEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:lineSpacingExtra">8dp</item> <!-- Adjust the value as per your requirement -->
     </style>
 
 </resources>
