@@ -27,26 +27,5 @@ class ArchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val collapsingToolbarLayout = binding.collapsingToolbarLayout
-        val appBarLayout = binding.appBarLayout
-        val toolbarImageView = binding.toolbarbackImage
-        val toolbarTextView = binding.toolbarTV
-
-        // Set the initial toolbar icon and text color here if needed
-        toolbarImageView.setImageResource(R.drawable.back_icon_white)
-        toolbarTextView.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
-
-        appBarLayout.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
-            val maxScroll = appBarLayout.totalScrollRange
-            val percentage = Math.abs(verticalOffset).toFloat() / maxScroll.toFloat()
-
-            val iconRes =
-                if (percentage >= 0.8) R.drawable.back_icon else R.drawable.back_icon_white
-            val textColorRes = if (percentage >= 0.8) R.color.black else R.color.white
-
-            toolbarImageView.setImageResource(iconRes)
-            toolbarTextView.setTextColor(ContextCompat.getColor(requireContext(), textColorRes))
-        })
-
     }
 }

@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.OpinionFragment">
+    android:fitsSystemWindows="true">
 
-    <TextView
+
+    <ImageView
+        android:id="@+id/humbler_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
-</androidx.core.widget.NestedScrollView>
+        android:layout_margin="@dimen/_12sdp"
+        android:src="@drawable/hamburger_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_opinion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ebrima_bold"
+        android:text="@string/str_opinion"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/humbler_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/humbler_icon" />
+
+    <ImageView
+        android:id="@+id/search_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:src="@drawable/search"
+        app:layout_constraintBottom_toBottomOf="@id/humbler_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/humbler_icon" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        app:tabGravity="fill"
+        app:tabTextAppearance="@style/TabLayoutStyle"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:tabSelectedTextColor="@color/black"
+        app:tabIndicatorColor="@color/gray"
+        app:tabIndicatorFullWidth="true"
+        app:layout_constraintTop_toBottomOf="@+id/humbler_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

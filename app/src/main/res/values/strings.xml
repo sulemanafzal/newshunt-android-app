@@ -133,4 +133,8 @@
     <string name="user_pasword">123123</string>
     <string name="str_mobilenumber">+92 3478923211</string>
     <string name="str_save">Save</string>
+    <string name="str_next">Next</string>
+    <string name="str_news">News</string>
+    <string name="str_opinion">Opinion</string>
+    <string name="str_trending">Trending</string>
 </resources>

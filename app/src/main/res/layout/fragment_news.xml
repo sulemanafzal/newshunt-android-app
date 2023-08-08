@@ -1,262 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:id="@+id/humbler_icon"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:layout_margin="@dimen/_12sdp"
+        android:src="@drawable/hamburger_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsingToolbarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            app:contentScrim="@color/white"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@id/toolbar">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_230sdp"
-                android:fitsSystemWindows="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/heatwave_imgg"
-                app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.7" />
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
-
-                <ImageView
-                    android:id="@+id/toolbarbackImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="start"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:src="@drawable/back_icon_white" />
-
-                <TextView
-                    android:id="@+id/toolbarTV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="end"
-                    android:fontFamily="@font/ebrima_regular"
-                    android:gravity="center"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:text="@string/view_source"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
-
-            </androidx.appcompat.widget.Toolbar>
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/rounded_top_corners"
-        android:backgroundTint="@color/white"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    <TextView
+        android:id="@+id/tv_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ebrima_bold"
+        android:text="@string/str_news"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/humbler_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@id/humbler_icon" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/rounded_top_corners"
-            android:backgroundTint="@color/white">
+    <ImageView
+        android:id="@+id/search_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:src="@drawable/search"
+        app:layout_constraintBottom_toBottomOf="@id/humbler_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/humbler_icon" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/channel_logo"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginStart="@dimen/_16sdp"
-                android:layout_marginTop="@dimen/_6sdp"
-                android:src="@drawable/ary_news_logo"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        app:tabGravity="fill"
+        app:tabTextAppearance="@style/TabLayoutStyle"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:tabSelectedTextColor="@color/black"
+        app:tabIndicatorColor="@color/gray"
+        app:tabIndicatorFullWidth="true"
+        app:layout_constraintTop_toBottomOf="@+id/humbler_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
-            <TextView
-                android:id="@+id/channel_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_6sdp"
-                android:fontFamily="@font/poppin_medium"
-                android:text="@string/ary_news"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/date"
-                app:layout_constraintStart_toEndOf="@+id/channel_logo"
-                app:layout_constraintTop_toTopOf="@+id/channel_logo" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_2sdp"
-                android:fontFamily="@font/poppin_regular"
-                android:text="@string/date"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/channel_logo"
-                app:layout_constraintStart_toStartOf="@+id/channel_name"
-                app:layout_constraintTop_toBottomOf="@+id/channel_name" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <TextView
-                android:id="@+id/card_title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_14sdp"
-                android:fontFamily="@font/poppin_bold"
-                android:text="@string/heatwave_text"
-                android:textAlignment="center"
-                android:textSize="@dimen/_14ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/channel_logo" />
-
-            <ImageView
-                android:id="@+id/share_logo"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_50sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@drawable/circle_background"
-                android:scaleType="center"
-                android:src="@drawable/share_icon"
-                app:layout_constraintEnd_toStartOf="@+id/arch_logo"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_title"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
-
-            <ImageView
-                android:id="@+id/arch_logo"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_4sdp"
-                android:background="@drawable/circle_background"
-                android:backgroundTint="#F9C8FF"
-                android:scaleType="center"
-                android:src="@drawable/arch_logo"
-                app:layout_constraintBottom_toBottomOf="@+id/share_logo"
-                app:layout_constraintEnd_toStartOf="@+id/fire_logo"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/share_logo"
-                app:layout_constraintTop_toTopOf="@+id/share_logo" />
-
-            <ImageView
-                android:id="@+id/fire_logo"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_4sdp"
-                android:background="@drawable/circle_background"
-                android:backgroundTint="#FFEACB"
-                android:scaleType="center"
-                android:src="@drawable/fire_logo"
-                app:layout_constraintBottom_toBottomOf="@+id/arch_logo"
-                app:layout_constraintEnd_toStartOf="@+id/unnameface_logo"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/arch_logo"
-                app:layout_constraintTop_toTopOf="@+id/arch_logo" />
-
-            <ImageView
-                android:id="@+id/unnameface_logo"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_4sdp"
-                android:background="@drawable/circle_background"
-                android:backgroundTint="#FFACC8"
-                android:scaleType="center"
-                android:src="@drawable/unamused_face"
-                app:layout_constraintBottom_toBottomOf="@+id/arch_logo"
-                app:layout_constraintEnd_toStartOf="@+id/feel_logo"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/fire_logo"
-                app:layout_constraintTop_toTopOf="@+id/arch_logo" />
-
-            <ImageView
-                android:id="@+id/feel_logo"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_4sdp"
-                android:background="@drawable/circle_background"
-                android:backgroundTint="#E1FBC2"
-                android:scaleType="center"
-                android:src="@drawable/feel"
-                app:layout_constraintBottom_toBottomOf="@+id/arch_logo"
-                app:layout_constraintEnd_toStartOf="@+id/normalface_logo"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/unnameface_logo"
-                app:layout_constraintTop_toTopOf="@+id/arch_logo" />
-
-            <TextView
-                android:id="@+id/tv_percent"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:background="@drawable/circle_background"
-                android:backgroundTint="#FF8A81"
-                android:gravity="center"
-                android:src="@drawable/feel"
-                android:text="@string/text_percent"
-                android:textAlignment="center"
-                android:textSize="@dimen/_8ssp"
-                app:layout_constraintBottom_toTopOf="@+id/feel_logo"
-                app:layout_constraintEnd_toEndOf="@+id/feel_logo"
-                app:layout_constraintStart_toStartOf="@+id/feel_logo"
-                app:layout_constraintTop_toTopOf="@+id/arch_logo" />
-
-            <ImageView
-                android:id="@+id/normalface_logo"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_50sdp"
-                android:background="@drawable/circle_background"
-                android:backgroundTint="#EFEFEF"
-                android:scaleType="center"
-                android:src="@drawable/normal_face"
-                app:layout_constraintBottom_toBottomOf="@+id/arch_logo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/feel_logo"
-                app:layout_constraintTop_toTopOf="@+id/arch_logo" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_6sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:fontFamily="@font/poppin_regular"
-                android:text="@string/largetext"
-                android:textSize="@dimen/_12ssp"
-                app:layout_constraintTop_toBottomOf="@+id/fire_logo" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.core.widget.NestedScrollView>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
