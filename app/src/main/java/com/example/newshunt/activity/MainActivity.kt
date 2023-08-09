@@ -24,10 +24,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        replaceFragment(NewsFragment())
 
 
-        /* val NavController = findNavController(R.id.fragmentContainerView)
-         binding.bottomNav.setupWithNavController(NavController)*/
+  /*       val NavController = findNavController(R.id.fragmentContainerView)
+         binding.bottonMenu.setupWithNavController(NavController)
+
+
+*/
+
+
 
         toggle = ActionBarDrawerToggle(
             this,
@@ -43,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
 
         binding.navView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener { item ->
-            if (item.itemId == R.id.news) {
+            if (item.itemId == R.id.news_selection) {
                 binding.drawerLayout.closeDrawer(GravityCompat.START)
                 binding.toolbar.setVisibility(View.GONE)
                 replaceFragment(NewsFragment())
@@ -62,15 +68,25 @@ class MainActivity : AppCompatActivity() {
             }
             false
         })
+
+        binding.bottonMenu.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.newsFragment -> replaceFragment(NewsFragment())
+                R.id.opinionFragment -> replaceFragment(OpinionFragment())
+                R.id.threndingFragment -> replaceFragment(ThrendingFragment())
+                R.id.archFragment -> replaceFragment(ArchFragment())
+            }
+            true
+        }
+
+        // Initially replace with NewsFragment
+        replaceFragment(NewsFragment())
     }
-    private fun replaceFragment(fragment: Fragment) {
 
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.framelayout, fragment)
-        fragmentTransaction.commit()
-        setTitle(title)
-
+private fun replaceFragment(fragment: Fragment) {
+    supportFragmentManager.beginTransaction()
+        .replace(R.id.framelayout, fragment)
+        .commit()
 
     }
 }

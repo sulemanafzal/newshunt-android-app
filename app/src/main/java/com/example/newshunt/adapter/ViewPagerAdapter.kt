@@ -13,6 +13,11 @@ import androidx.fragment.app.FragmentPagerAdapter
 class ViewPagerAdapter(fm: FragmentManager) :
     FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
+    private var mFragmentList : ArrayList<Fragment> = ArrayList()
+
+    fun addFragment(fragment: Fragment){
+        mFragmentList.add(fragment)
+    }
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> AllNewsFragment()

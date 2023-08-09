@@ -20,20 +20,23 @@ class OpinionFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         binding = FragmentOpinionBinding.inflate(layoutInflater, container, false)
-        val adapter = ViewPagerAdapter(childFragmentManager) // Use childFragmentManager here
+
+        /*
+               val adapter = ViewPagerAdapter(childFragmentManager) // Use childFragmentManager here
 
 
-        binding.viewPager.adapter = adapter
+               binding.viewPager.adapter = adapter
 
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
+               binding.tabLayout.setupWithViewPager(binding.viewPager)
 
-        // Set custom tab text
-        binding.tabLayout.getTabAt(0)?.text = "Hasan Nisar"
-        binding.tabLayout.getTabAt(1)?.text = "Hamid Mir"
-        binding.tabLayout.getTabAt(2)?.text = "Iqrar Ul Hassan"
-        binding.tabLayout.getTabAt(3)?.text = "Aftab Iqbal"
+               // Set custom tab text
+               binding.tabLayout.getTabAt(0)?.text = "Hasan Nisar"
+               binding.tabLayout.getTabAt(1)?.text = "Hamid Mir"
+               binding.tabLayout.getTabAt(2)?.text = "Iqrar Ul Hassan"
+               binding.tabLayout.getTabAt(3)?.text = "Aftab Iqbal"
+
+         */
         binding.humblerIcon.setOnClickListener {
             val mainActivity = requireActivity() as MainActivity
             val drawerLayout = mainActivity.findViewById<DrawerLayout>(R.id.drawer_layout)

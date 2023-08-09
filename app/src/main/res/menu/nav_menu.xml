@@ -10,7 +10,7 @@
         <menu>
 
             <item
-                android:id="@+id/news"
+                android:id="@+id/news_selection"
                 android:icon="@drawable/news_icon"
                 android:title="News" />
             <item

@@ -138,4 +138,6 @@
     <string name="str_opinion">Opinion</string>
     <string name="str_trending">Trending</string>
     <string name="str_slidertext">The 7 worst business software</string>
+    <string name="str_category">Category</string>
+    <string name="str_language">Language</string>
 </resources>

@@ -11,6 +11,7 @@ import com.example.newshunt.databinding.FragmentArchBinding
 import com.example.newshunt.databinding.FragmentSportsBinding
 import com.google.android.material.appbar.AppBarLayout
 
+@Suppress("NAME_SHADOWING")
 class SportsFragment : Fragment() {
 
     lateinit var binding: FragmentSportsBinding
@@ -28,7 +29,6 @@ class SportsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val collapsingToolbarLayout = binding.collapsingToolbarLayout
         val appBarLayout = binding.appBarLayout
         val toolbarImageView = binding.toolbarbackImage
         val toolbarTextView = binding.toolbarTV
