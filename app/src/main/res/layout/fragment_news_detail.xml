@@ -22,6 +22,7 @@
             app:toolbarId="@id/toolbar">
 
             <ImageView
+                android:id="@+id/top_image"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_230sdp"
                 android:fitsSystemWindows="true"
@@ -100,7 +101,7 @@
                 android:layout_marginStart="@dimen/_6sdp"
                 android:fontFamily="@font/poppin_medium"
                 android:text="@string/ary_news"
-                android:textSize="14sp"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/date_detail"
                 app:layout_constraintStart_toEndOf="@+id/channel_logo_politcs"
@@ -113,7 +114,7 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:fontFamily="@font/poppin_regular"
                 android:text="@string/date"
-                android:textSize="14sp"
+                android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="@+id/channel_logo_politcs"
                 app:layout_constraintStart_toStartOf="@+id/channel_name"
                 app:layout_constraintTop_toBottomOf="@+id/channel_name" />
@@ -244,6 +245,7 @@
 
 
             <TextView
+                android:id="@+id/desc_detilfragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"

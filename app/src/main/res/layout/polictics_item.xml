@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <!-- First CardView -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_145sdp"
-        android:layout_margin="16dp"
+        android:layout_margin="10dp"
         app:cardCornerRadius="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/heatwave"
+                android:src="@drawable/shahabazsharip"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -49,6 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/card_view">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/channelName_politcs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/_6sdp">
@@ -59,8 +60,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/str_politics"
                 android:textAlignment="center"
-                android:maxLines="2"
-                android:ellipsize="end"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +72,7 @@
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginStart="@dimen/_4sdp"
                 android:layout_marginTop="@dimen/_8sdp"
-                android:src="@drawable/ary_news_logo"
+                android:src="@drawable/ndtvv_logo"
                 app:layout_constraintEnd_toStartOf="@+id/channel_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/card_title_politcs"

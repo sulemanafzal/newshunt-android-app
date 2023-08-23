@@ -22,6 +22,7 @@
             app:toolbarId="@id/toolbar">
 
             <ImageView
+                android:id="@+id/top_image"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_230sdp"
                 android:fitsSystemWindows="true"
@@ -68,9 +69,9 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_minus18sdp"
         android:background="@drawable/rounded_top_corners"
         android:backgroundTint="@color/white"
-        android:layout_marginTop="@dimen/_minus18sdp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +89,7 @@
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_6sdp"
-                android:src="@drawable/ary_news_logo"
+                android:src="@drawable/ndtv_logo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
@@ -99,8 +100,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_6sdp"
                 android:fontFamily="@font/poppin_medium"
-                android:text="@string/ary_news"
-                android:textSize="14sp"
+                android:text="NDTV"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/date_detail"
                 app:layout_constraintStart_toEndOf="@+id/channel_logo_politcs"
@@ -113,7 +114,7 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:fontFamily="@font/poppin_regular"
                 android:text="@string/date"
-                android:textSize="14sp"
+                android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="@+id/channel_logo_politcs"
                 app:layout_constraintStart_toStartOf="@+id/channel_name"
                 app:layout_constraintTop_toBottomOf="@+id/channel_name" />
@@ -127,7 +128,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_14sdp"
                 android:fontFamily="@font/poppin_bold"
-                android:text="@string/heatwave_text"
+                android:text="@string/str_politics"
                 android:textAlignment="center"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -244,14 +245,18 @@
 
 
             <TextView
+                android:id="@+id/desc_detilfragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginTop="@dimen/_6sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
                 android:fontFamily="@font/poppin_regular"
-                android:text="@string/largetext"
+                android:text="@string/largtext_politcs"
                 android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fire_logo" />
 
 

@@ -8,11 +8,11 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/user_logo"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginTop="@dimen/_32sdp"
-        android:layout_marginStart="@dimen/_30sdp"
-        android:src="@drawable/ic_launcher_background"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_32sdp"
+        android:src="@drawable/user_icon"
+        android:padding="@dimen/_4sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
@@ -31,13 +31,14 @@
 
     <TextView
         android:id="@+id/dts_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:text="@string/signin_to_customize_news"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintBottom_toBottomOf="@+id/user_logo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/user_logo"
         app:layout_constraintTop_toBottomOf="@+id/text" />
 
@@ -45,6 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="#EDECEC"
+        android:layout_marginTop="@dimen/_23ssp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dts_text" />
 

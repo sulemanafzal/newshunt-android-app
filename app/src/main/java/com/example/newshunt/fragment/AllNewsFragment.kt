@@ -16,34 +16,39 @@ import java.util.*
 class AllNewsFragment : Fragment() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<AllNewsAdapter.ViewHolder>? = null
-    lateinit var binding: FragmentAllNewsBinding
-    private lateinit var allnewspagerslider: AllNewsSliderAdapter
 
-    private var currentItem  =0
+    //private var adapter: RecyclerView.Adapter<AllNewsAdapter.ViewHolder>? = null
+    lateinit var binding: FragmentAllNewsBinding
+
+
+    private var currentItem = 0
     private val imageList = listOf(
         R.drawable.heatwave,
         R.drawable.image_kalash,
         R.drawable.heatwave
     )
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentAllNewsBinding.inflate(layoutInflater, container, false)
 
-        layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.layoutManager = layoutManager
+       /* layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.layoutManager = layoutManager*/
 
-        adapter = AllNewsAdapter()
-        binding.recyclerView.adapter = adapter
+        val allnewsAdapter = AllNewsAdapter()
 
-        allnewspagerslider = AllNewsSliderAdapter(requireContext(), imageList)
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = allnewsAdapter
+        }
+
+      val  allnewspagerslider = AllNewsSliderAdapter(requireContext(), imageList)
         binding.sliderViewpager.adapter = allnewspagerslider
 
-        val timer =Timer()
-
+        val timer = Timer()
         timer.scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
                 requireActivity().runOnUiThread {
@@ -54,9 +59,6 @@ class AllNewsFragment : Fragment() {
                 }
             }
         }, 2000, 3000) // Auto-scroll every 3 seconds
-
-
-
         return binding.root
     }
 }

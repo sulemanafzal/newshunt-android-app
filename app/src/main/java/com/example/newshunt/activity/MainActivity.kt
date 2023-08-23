@@ -33,8 +33,6 @@ class MainActivity : AppCompatActivity() {
 
 */
 
-
-
         toggle = ActionBarDrawerToggle(
             this,
             binding.drawerLayout,
@@ -49,38 +47,30 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
 
         binding.navView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener { item ->
-            if (item.itemId == R.id.news_selection) {
-                binding.drawerLayout.closeDrawer(GravityCompat.START)
-                binding.toolbar.setVisibility(View.GONE)
-                replaceFragment(NewsFragment())
-            } else if (item.itemId == R.id.opinions) {
-                binding.drawerLayout.closeDrawer(GravityCompat.START)
-                binding.toolbar.setVisibility(View.GONE)
-                replaceFragment(OpinionFragment())
-            } else if (item.itemId == R.id.category) {
-                binding.drawerLayout.closeDrawer(GravityCompat.START)
-                binding.toolbar.setVisibility(View.GONE)
-                replaceFragment(CategoryFragment())
-            } else if (item.itemId == R.id.language) {
-                binding.drawerLayout.closeDrawer(GravityCompat.START)
-                binding.toolbar.setVisibility(View.GONE)
-                replaceFragment(LanguageFragment())
-            }
-            false
-        })
-
-        binding.bottonMenu.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.newsFragment -> replaceFragment(NewsFragment())
-                R.id.opinionFragment -> replaceFragment(OpinionFragment())
-                R.id.threndingFragment -> replaceFragment(ThrendingFragment())
-                R.id.archFragment -> replaceFragment(ArchFragment())
+                R.id.news_selection -> replaceFragment(NewsSelectionFragment())
+                R.id.opinions -> replaceFragment(OpinionSelectionFragment())
+                R.id.category -> replaceFragment(CategoryFragment())
+                R.id.language -> replaceFragment(LanguageFragment())
+                R.id.push_notification->replaceFragment(PushNotificationFragment())
+                R.id.fontsize ->replaceFragment(FontSizeFragment())
+                R.id.howto ->replaceFragment(HowToFragment())
+                R.id.aboutus ->replaceFragment(AboutusFragment())
             }
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
-        }
-
-        // Initially replace with NewsFragment
+        })
+            binding.bottonMenu.setOnItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.newsFragment -> replaceFragment(NewsFragment())
+                    R.id.opinionFragment -> replaceFragment(OpinionFragment())
+                    R.id.threndingFragment -> replaceFragment(ThrendingFragment())  // Fixed typo
+                    R.id.archFragment -> replaceFragment(ArchFragment())
+                }
+                true
+            }
         replaceFragment(NewsFragment())
+
     }
 
 private fun replaceFragment(fragment: Fragment) {

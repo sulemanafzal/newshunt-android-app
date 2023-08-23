@@ -12,6 +12,8 @@ class AllNewsSliderAdapter(private val context: Context, private val imageList: 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val imageView = ImageView(context)
         imageView.setImageResource(imageList[position])
+
+        imageView.scaleType = ImageView.ScaleType.CENTER_INSIDE // Set the scale type
         container.addView(imageView)
         return imageView
     }

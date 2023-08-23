@@ -5,52 +5,53 @@
 
 
     <item
-        android:title="Setting" >
+        android:title="@string/str_setting" >
 
         <menu>
 
             <item
                 android:id="@+id/news_selection"
                 android:icon="@drawable/news_icon"
-                android:title="News" />
+                android:title="@string/str_news_selection" />
             <item
                 android:id="@+id/opinions"
                 android:icon="@drawable/message_icon"
-                android:title="Opinions" />
+                android:title="@string/str_opinions_selection" />
             <item
                 android:id="@+id/category"
                 android:icon="@drawable/category_icon"
-                android:title="Category" />
+                android:title="@string/str_category_selection" />
             <item
                 android:id="@+id/language"
                 android:icon="@drawable/language_icon"
-                android:title="Language" />
+                android:title="@string/str_language_selection" />
 
         </menu>
 
     </item>
 
-    <item android:title="General">
+    <item android:title="@string/str_general">
         <menu>
 
             <item
-                android:id="@+id/notification"
+                android:id="@+id/push_notification"
                 android:icon="@drawable/notification"
-                android:title="Push Notification" />
+                android:title="@string/str_push_notification" />
             <item
                 android:id="@+id/fontsize"
                 android:icon="@drawable/font_size_icon"
-                android:title="Font Size" />
+                android:title="@string/str_font_size" />
             <item
                 android:id="@+id/howto"
                 android:icon="@drawable/notification"
-                android:title="How To" />
+                android:title="@string/str_how_to" />
             <item
                 android:id="@+id/aboutus"
                 android:icon="@drawable/notification"
-                android:title="About Us" />
+                android:title="@string/str_about_us" />
         </menu>
     </item>
+
 
 
 </menu>

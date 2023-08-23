@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <!-- First CardView -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_145sdp"
-        android:layout_margin="16dp"
+        android:layout_margin="10dp"
         app:cardCornerRadius="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/heatwave"
+                android:src="@drawable/default_gradient"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -49,6 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/card_view">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/channelName_politcs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/_6sdp">
@@ -57,26 +58,25 @@
                 android:id="@+id/card_title_politcs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
                 android:text="@string/str_politics"
                 android:textAlignment="center"
-                android:maxLines="2"
-                android:ellipsize="end"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/channel_logo_politcs"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginStart="@dimen/_4sdp"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:src="@drawable/ary_news_logo"
+                android:src="@drawable/ndtvv_logo"
+                app:layout_constraintBottom_toTopOf="@+id/card_title_politcs"
                 app:layout_constraintEnd_toStartOf="@+id/channel_name"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_title_politcs"
+                app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
             <ImageView
@@ -87,9 +87,9 @@
                 android:background="@drawable/circle_background"
                 android:scaleType="center"
                 android:src="@drawable/share_icon"
-                app:layout_constraintBottom_toBottomOf="@+id/arch_logo_politcs"
-                app:layout_constraintEnd_toStartOf="@+id/arch_logo_politcs"
-                app:layout_constraintTop_toTopOf="@+id/channel_name" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_title_politcs" />
 
             <ImageView
                 android:id="@+id/arch_logo_politcs"
@@ -100,9 +100,9 @@
                 android:backgroundTint="#D48EDD"
                 android:scaleType="center"
                 android:src="@drawable/arch_logo"
-                app:layout_constraintBottom_toBottomOf="@+id/channel_logo_politcs"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/channel_logo_politcs" />
+                app:layout_constraintBottom_toBottomOf="@+id/share_logo_politcs"
+                app:layout_constraintStart_toEndOf="@+id/share_logo_politcs"
+                app:layout_constraintTop_toBottomOf="@+id/card_title_politcs" />
 
             <TextView
                 android:id="@+id/channel_name"
@@ -123,7 +123,7 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:text="@string/date"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/channel_logo_politcs"
+                app:layout_constraintBottom_toTopOf="@+id/card_title_politcs"
                 app:layout_constraintStart_toStartOf="@+id/channel_name"
                 app:layout_constraintTop_toBottomOf="@+id/channel_name" />
 

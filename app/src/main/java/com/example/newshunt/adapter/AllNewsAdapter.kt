@@ -1,79 +1,104 @@
 package com.example.newshunt.adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
-import com.example.newshunt.AllNewsItem
+import com.example.newshunt.Model.NewsModel
 import com.example.newshunt.R
+import com.example.newshunt.fragment.NewsDetailFragment
 
 class AllNewsAdapter : RecyclerView.Adapter<AllNewsAdapter.ViewHolder>() {
 
-    private val itemTitle = arrayOf(
-        "Heatwave: Hospitals under KMC put on standby for heatstroke patients",
-        "Kalaish Valley: The Hidden Secrets of the people living there",
-        "Pakistan will spare no effort to dismantle terrorist networks: COAS",
-        "Govt withdraws Pemra amendments bill on journalists concerns"
-    )
-    private val itemchannelname = arrayOf(
-        "ARY News ", "AAj News",
-        "InterNitional News", "GEO NEWS"
-    )
-    private val postDate = arrayOf("12.May.12 ", "31.June.32", "12.August.23", "12.December.12")
-    private val item_channel_logo = intArrayOf(
-        R.drawable.ary_news_logo,
-        R.drawable.ajjnewslogo,
-        R.drawable.inter_logo,
-        R.drawable.geologo,
-    )
-    private val item_image = intArrayOf(
-        R.drawable.heatwave,
-        R.drawable.image_kalash,
-        R.drawable.inter_news,
-        R.drawable.marriyum_aurangzeb_updates,
+    private val newsItems = arrayOf(
+        NewsModel(
+            R.drawable.heatwave,
+            "Heatwave: Hospitals under KMC put on standby...",
+            R.drawable.ary_news_logo,
+            "ARY News",
+            "12.May.12",
+            R.drawable.share_icon,
+            R.drawable.arch_logo,
+            "Description 1"
+        ),
+        NewsModel(
+            R.drawable.image_kalash,
+            "Kalaish Valley: The Hidden Secrets of the people...",
+            R.drawable.ajjnewslogo,
+            "AAj News", "31 June 32",
+            R.drawable.share_icon,
+            R.drawable.arch_logo,
+            "Description 2",
+        ),
+        NewsModel(
+            R.drawable.shahabazsharip,
+            "Pakistan will spare no effort to dismantle terrorist...",
+            R.drawable.inter_logo,
+            "InterNitional News", "12.August.23",
+            R.drawable.share_icon,
+           R.drawable.arch_logo,
+            "Description 3"
+        ),
     )
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var image: ImageView
-        var title: TextView
-        var tv_logo: ImageView
-        var channelName: TextView
-        var post_date: TextView
+        val image = itemView.findViewById<ImageView>(R.id.title_image)
+        val title = itemView.findViewById<TextView>(R.id.card_title_politcs)
+        val tvLogo = itemView.findViewById<ImageView>(R.id.channel_logo_politcs)
+        val channelName = itemView.findViewById<TextView>(R.id.channel_name)
+        val postDate = itemView.findViewById<TextView>(R.id.date_detail)
 
         init {
-            image = itemView.findViewById(R.id.title_image)
-            title = itemView.findViewById(R.id.card_title)
-            tv_logo = itemView.findViewById(R.id.channel_logo)
-            channelName = itemView.findViewById(R.id.channel_name)
-            post_date = itemView.findViewById(R.id.date)
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val clickitem = newsItems[position]
 
+                    val fragment = NewsDetailFragment()
+                    val bundle = Bundle()
+                    bundle.putInt("image", clickitem.image)
+                    bundle.putString("title", clickitem.title)
+                    bundle.putInt("newsLogo", clickitem.channelLogo)
+                    bundle.putInt("shareLogo", clickitem.shareLogo)
+                    bundle.putInt("archLogo", clickitem.archLogo)
+                    bundle.putString("channelName", clickitem.channelName)
+                    bundle.putString("desc", clickitem.desc)
+                    bundle.putString("postDate", clickitem.postDate)
+
+                    fragment.arguments = bundle
+
+                    val transaction: FragmentTransaction =
+                        (itemView.context as AppCompatActivity).supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.framelayout, fragment)
+                    transaction.addToBackStack(null)
+                    transaction.commit()
+                }
+
+
+                Toast.makeText(it.context, "Click On the item", Toast.LENGTH_LONG).show()
+            }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.allnews_item, parent, false)
-        return ViewHolder(v)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.allnews_item, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.title.text = itemTitle[position]
-        holder.channelName.text = itemchannelname[position]
-        holder.post_date.text = postDate[position]
-        holder.tv_logo.setImageResource(item_channel_logo[position])
-        holder.image.setImageResource(item_image[position])
-
-        holder.itemView.setOnClickListener { v: View ->
-            Toast.makeText(v.context, "Click On the item", Toast.LENGTH_LONG).show()
-
-        }
-
+        val item = newsItems[position]
+        holder.title.text = item.title
+        holder.channelName.text = item.channelName
+        holder.postDate.text = item.postDate
+        holder.tvLogo.setImageResource(item.channelLogo)
+        holder.image.setImageResource(item.image)
     }
 
-    override fun getItemCount(): Int {
-        return itemTitle.size
-    }
+    override fun getItemCount(): Int = newsItems.size
 }

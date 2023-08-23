@@ -11,6 +11,7 @@ class TempAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
 
     fun addFragment(fragment: Fragment, title: String) {
         mFragmentList.add(fragment)
+        mTitleList.add(title)
     }
 
     fun getTitle(position: Int) = mTitleList[position]

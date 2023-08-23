@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_opinion">
+
+        <ImageView
+            android:id="@+id/humbler_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_12sdp"
+            android:padding="@dimen/_6sdp"
+            android:src="@drawable/hamburger_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_opinion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ebrima_bold"
+            android:text="@string/str_opinions_selection"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="@id/humbler_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/humbler_icon" />
+
+        <ImageView
+            android:id="@+id/search_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:src="@drawable/search"
+            app:layout_constraintBottom_toBottomOf="@id/humbler_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/humbler_icon" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_following"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/ebrima_bold"
+            android:gravity="center"
+            android:elevation="@dimen/_4sdp"
+            android:text="@string/str_following"
+            android:textSize="@dimen/_14ssp"
+            app:cornerRadius="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="@+id/humbler_icon"
+            app:layout_constraintTop_toBottomOf="@+id/tv_opinion"
+            app:strokeColor="@color/blue" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_browse"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/ebrima_bold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_5sdp"
+            android:text="@string/str_browse"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_14ssp"
+            app:cornerRadius="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_following"
+            app:layout_constraintEnd_toEndOf="@+id/search_icon"
+            app:layout_constraintTop_toTopOf="@+id/btn_following"
+            app:layout_constraintWidth_percent="0.45"
+            app:strokeColor="@color/blue"
+            app:strokeWidth="2dp" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_following" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

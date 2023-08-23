@@ -21,7 +21,7 @@ class NewsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentNewsBinding.inflate(layoutInflater, container, false)
 
         //val adapter = ViewPagerAdapter(childFragmentManager) // Use childFragmentManager here
@@ -47,13 +47,16 @@ class NewsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val tempAdapter = TempAdapter(requireActivity())
-        tempAdapter.addFragment(NewsFragment(), "All News")
+
+        tempAdapter.addFragment(AllNewsFragment(), "All News")
         tempAdapter.addFragment(PoliticsFragment(), "Politics")
         tempAdapter.addFragment(SportsFragment(), "Sports")
         tempAdapter.addFragment(TechnologyFragment(), "Technology")
 
         binding.viewPager2.adapter = tempAdapter
 
-
-    }
+        TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
+            tab.text = tempAdapter.getTitle(position)
+        }.attach()
+        }
 }
